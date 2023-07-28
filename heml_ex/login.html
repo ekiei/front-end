@@ -6,10 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <input type="text" name="user" placeholder="名前を入力してください"><br><br>
-    <input type="password" placeholder="passwordを入力してください"><br><br>
-
-    <input type="submit" value="Login">
+    <main>
+        <h1>Login</h1>
+        <form action="" method="post">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" placeholder="名前を入力してください" required>
+            <br><br>
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" placeholder="passwordを入力してください">
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+    </main>
 </body>
 </html>
