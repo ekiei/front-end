@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>お問合せフォーム</h1>
+    <form action="" method="post">
+        <label for="username">ユーザー名：</label>
+        <input type="text" id="username" name="name" placeholder="氏名を入力" required><br>
+        氏名：<input type="text" name="name" value="zhang"><br>
+        密码：<input type="password" name="password"><br>
+
+        <label for="banana">フルーツの選択</label><br>
+        <input type="radio" id="apple" value="りんご">りんご<br>
+        <input type="checkbox" id="banana" value="banana">バナナ<br>
+
+        <p>フルーツの選択</p>
+        <input type="radio">苹果<br>
+        <input type="checkbox">香蕉<br>
+
+        <!-- 添加file -->
+        <input type="file"><br>
+        <!-- 文本框 -->
+        <textarea name="" id="" cols="30" rows="4"></textarea><br>
+        <!-- 下拉框 -->
+        <select name="" id="">
+            <option value=""></option>
+            <option value="リンゴ">リンゴ</option>
+            <option value="バナナ">バナナ</option>
+            <option value="ブドウ">ブドウ</option>
+        </select><br>
+        <!-- 送信按钮,value后面的参数可以改变按钮名字 -->
+        <input type="submit" value="登録">
+    </form>
+</body>
+</html>
