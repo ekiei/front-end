@@ -1,0 +1,32 @@
+a{
+    display: inline-block;
+    background-color: rgba(0, 255, 255, 0.278);
+    color: rgb(0, 0, 0);
+    /* border */
+    border: 3px solid red;
+    padding: 10px;
+    /*margin: 10px;*/
+}
+
+p{
+    /* ボーダーのスタイル */
+    border-style: dashed solid dotted double;
+    /* ボーダーの太さ */
+    border-width: 3px;
+    /* 色 */
+    border-color: blue;
+    /* 角丸にする */
+    border-radius: 10px;
+
+    padding: 10px 10px 10px 300px;
+    background-color: azure;
+
+    margin: 50px 100px;
+}
+
+h1{
+    /* 一括でできる */
+    border-top: 3px dashed gray;/*虚线部分*/
+    padding-top: 50px;
+    margin-top: 50px ;
+}

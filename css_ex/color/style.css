@@ -1,0 +1,42 @@
+/* h1に対して赤をつける */
+h1{
+    color: rgb(242, 85, 85);
+    /* 背景色をつける */
+    background-color: #5195f4;
+
+    /* 画面の中央に揃える */
+    text-align: center;
+    /* left,right同上 */
+
+    /* フォントの指定 */
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: 'Borel', cursive;
+
+    /* 文字サイズ*/
+    font-size: 16px;
+
+    /* 横幅の設定 */
+    width: 600px;
+    /* 高さの設定 */
+    height: 25px;
+
+    margin: 0 auto;
+}
+
+p{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+a{
+    background-color: rgb(202, 158, 243);
+    text-align: center;
+}
+
+#a{
+    display: block;
+}
+
+div{
+    text-align: center;
+}

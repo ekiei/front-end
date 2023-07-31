@@ -1,0 +1,29 @@
+header{
+    background-color: rgba(234, 37, 37, 0.3);
+}
+
+ul{
+/*变成一排了*/
+    display: flex;
+    /*横幅をつける、要素同士を離す*/
+    /*在一排,分开了*/
+    gap: 0 10px;
+    /* 中央寄せ center end*/
+    justify-content: flex-end;
+}
+
+li{
+    list-style: none;
+}
+
+div{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(197, 146, 83);
+}
+
+section{
+    display: flex;
+    gap: 0 20px;
+    justify-content: center;
+}
