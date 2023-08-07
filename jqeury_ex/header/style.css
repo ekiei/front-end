@@ -1,0 +1,33 @@
+body{
+    padding-top: 90px;
+}
+header{
+    /*画面宽度*/
+    width: 100%;
+    /*画面高度*/
+    height: 50px;
+    background-color: rgba(191, 232, 158, 0.249);
+    padding: 10px 50px;
+
+    /*以窗口为基准固定画面*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    /*字在中间*/
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    gap: 0 40px;
+}
+
+.menu li{
+    /* 删除列表的点 */
+    list-style: none;
+}
+
+main li{
+    height: 1200px;
+}
