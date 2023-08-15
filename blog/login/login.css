@@ -1,0 +1,32 @@
+.login{
+    width: 300px;
+    border: 2px solid;
+    padding: 20px;
+    margin: 0 auto;
+    
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#username,#password{
+    width: 90%;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+#loginButton{
+    background-color:rgb(0, 110, 255);
+    color: rgb(255, 255, 255);
+    width: 95%;
+    border: 1px solid;
+    padding: 5px;
+    font-size: large;
+    font-weight: 400;
+}
+#loginButton:hover{
+    background-color: rgba(0, 110, 255, 0.809);
+}

@@ -2,7 +2,7 @@ a{
     display: inline-block;
     background-color: rgba(0, 255, 255, 0.278);
     color: rgb(0, 0, 0);
-    /* border */
+    /* border 边框*/
     border: 3px solid red;
     padding: 10px;
     /*margin: 10px;*/

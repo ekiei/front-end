@@ -1,4 +1,4 @@
-.container{
+.login{
     width: 300px;
     padding: 20px;
     margin: 0 auto;
@@ -9,6 +9,7 @@ h1{
 }
 
 #email,#password{
+    width: 300px;
     padding: 5px;
     border-radius: 6px;
     margin-bottom: 20px;
