@@ -1,0 +1,30 @@
+button{
+    font-size: large;
+    font-weight: 400;
+}
+
+#content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 20px;
+}
+
+#select{
+    width: 15%;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+#selectButton{
+    background-color:rgb(0, 110, 255);
+    color: rgb(255, 255, 255);
+    width: 8%;
+    border: 1px solid;
+    padding: 5px;
+    font-size: large;
+    font-weight: 400;
+}
+#selectButton:hover{
+    background-color: rgba(0, 110, 255, 0.809);
+}
