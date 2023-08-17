@@ -1,3 +1,10 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .register{
     width: 300px;
     border: 2px solid;
@@ -13,7 +20,7 @@ h1{
 #username,#email,#password{
     width: 90%;
     padding: 6px;
-    border-radius: 6px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -23,10 +30,17 @@ h1{
     width: 95%;
     border: 1px solid;
     padding: 5px;
+    border-radius: 20px;
     font-size: large;
     font-weight: 400;
+    cursor: pointer;
 }
 
 #reButton:hover{
-    background-color: rgba(0, 110, 255, 0.809);
+    background-color: rgba(255, 0, 21, 0.809);
+    transition: 1s;
+}
+
+.register input[type="text"],.register input[type="password"]{
+    border: 2px solid green;
 }

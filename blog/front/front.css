@@ -1,12 +1,12 @@
 button{
-    font-size: large;
+    font-size: 15px;
     font-weight: 400;
 }
 
 #content{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     gap: 0 20px;
 }
 
