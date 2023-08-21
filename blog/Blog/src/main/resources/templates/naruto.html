@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Naruto</title>
+	<link rel="stylesheet" th:href="@{/css/front.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<header>
+		<div id="header" style="background-color: rgba(128, 128, 128, 0.503);text-align: end;">
+			<a href="/front"><i class="fa-solid fa-circle-user"></i></a>
+			<button><i class="fa-solid fa-user"></i><a href="/register">登録</a></button>
+			<button type="button"><i class="fa-solid fa-right-to-bracket"></i><a th:href="@{/login}">ログイン</a></button>
+			<button type="button"><i class="fa-solid fa-right-from-bracket"></i><a
+					th:href="@{/logout}">ログアウト</a></button>
+			<button type="button"><i class="fa-solid fa-pen"></i><a th:href="@{/blog/register}">投稿</a></button>
+			<button type="button" onclick="alert('Hello word!')">TEST</button>
+		</div>
+
+		<h1 id="" style="text-align: center;">張のブログ</h1>
+
+		<div style="text-align: center;">
+			<img th:src="@{/image/Z.png}" alt="私">
+		</div>
+
+		<div id="menu" style="text-align: center;">
+			<button style="background-color: rgba(201, 236, 255, 0.372); width: 100px; height: 45px;" type="button"
+				onclick="location.href='/front'"><i class="fa-solid fa-house"></i>ホーム</button>
+			<button style="background-color: rgba(201, 236, 255, 0.372); width: 100px; height: 45px;" type="button"
+				onclick="location.href='/kiji'">記事一覧</button>
+		</div>
+	</header>
+
+	<main>
+		<hr>
+		<h1 style="text-align: center;">鳴門の渦潮</h1>
+		<hr>
+		<p>初めて見た鳴門の渦潮は、思っていたのと違っていた。<br>
+			<img th:src="@{/image/1.jpeg}" alt="">
+		</p>
+		<p>台風の目のような、はっきりとした形の渦が、海面に浮かんでいるのをイメージしていたが、実際は、そこまではっきりしていない。<br>
+			渦の形や場所も一定でなく、常に変化している。
+		</p>
+
+		<p>また、干潮満潮の影響もあり、日によって、見える状態が大きく変化するという。</p>
+		<p>船で渦潮に近づくと、渦潮の激しい動きが聞こえてくる。</p>
+		<p>船が進むことで聞こえる風切り音と波の音、そして渦潮の轟音が、自然の力強さとダイナミズムをより実感できる。</p>
+	</main>
+
+	<footer>
+		<hr>
+		<div id="end" style="height: 80px;clear: both;text-align: center;">
+			<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://line.me/en/" target="_blank"><i class="fa-brands fa-line"></i></a>
+			<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+			<a href="" target="_blank"><i class="fa-solid fa-cart-shopping"></i></a>
+
+			<h2>ご覧いただきありがとうございました</h2>
+		</div>
+		<div id="footer" style="clear:both;text-align:center;">
+			版权 © yirui.com</div>
+	</footer>
+</body>
+
+</html>
