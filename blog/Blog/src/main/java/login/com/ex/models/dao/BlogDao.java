@@ -18,7 +18,7 @@ public interface BlogDao extends JpaRepository<BlogEntity, Long> {
 	List<BlogEntity>findAll();
 	
 	//blogIdを使ってDBに検索
-	BlogEntity findByBlogId(Long BlogId);
+	BlogEntity findByBlogId(Long blogId);
 	//blogTitleで検索
 	BlogEntity findByBlogTitle(String blogTitle);
 	

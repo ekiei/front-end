@@ -16,10 +16,10 @@ public class BlogService {
 	
 	//内容を保存
 	public boolean createBlog(@NonNull String blogTitle, @NonNull String blogImage,
-			@NonNull String article, @NonNull String usersId) {
+			@NonNull String article,@NonNull String usersId) {
 		BlogEntity blogList = blogDao.findByBlogTitle(blogTitle);
 		if(blogList == null) {
-			blogDao.save(new BlogEntity(blogTitle,blogImage,article, usersId));
+			blogDao.save(new BlogEntity(blogTitle,blogImage,article,usersId));
 			return true;
 		}else {
 			return false;
@@ -46,7 +46,7 @@ public class BlogService {
 	
 	//更新処理
 	public boolean editBlog(Long blogId,@NonNull String blogTitle, @NonNull String blogImage,
-			@NonNull String article, @NonNull String usersId) {
+			@NonNull String article) {
 		//更新する前にデータベースの内容を取得
 		BlogEntity blogList = blogDao.findByBlogId(blogId);
 		if(blogList == null) {
@@ -55,7 +55,7 @@ public class BlogService {
 			blogList.setBlogTitle(blogTitle);
 			blogList.setBlogImage(blogImage);
 			blogList.setArticle(article);
-			blogList.setUsersId(usersId);
+
 			blogDao.save(blogList);
 			return true;
 		}

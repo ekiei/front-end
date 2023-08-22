@@ -48,19 +48,12 @@
 		<hr>
 
 		<div id="content">
-			<div>
-				<a th:href="@{/naruto}"><img th:src="@{/image/1.jpeg}" alt="日の出" width="300" height="200"></a>
-				<h4>2022年5月7日</h4>
-				<h2><a th:href="@{/naruto}">四国・鳴門</a></h2>
-				<p>日の出</p>
+			<div th:each="blog:${blogList}">
+				<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
+					<img th:src="@{/blog-img/{items}(items=${blog.blogImage})}" alt="" width="300" height="200">
+					<h2 th:text="${blog.blogTitle}"></h2>
+				</a>
 			</div>
-			<div>
-				<img src="7.jpeg" alt="菜々子" width="300" height="200">
-				<h4>2022年5月13日</h4>
-				<h2><a href="">東京・上野</a></h2>
-				<p>菜々子</p>
-			</div>
-
 		</div>
 	</main>
 
@@ -78,10 +71,6 @@
 		<div id="footer" style="clear:both;text-align:center;">
 			© yirui.com</div>
 	</footer>
-
-
-
-
 </body>
 
 </html>

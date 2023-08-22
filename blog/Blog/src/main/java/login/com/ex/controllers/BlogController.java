@@ -30,8 +30,17 @@ public class BlogController {
 	private HttpSession session;
 	
 	@GetMapping("/front")
-	public String getFrontPage() {
-		return "front.html";
+	public String getFrontPage(Model model) {
+		UsersEntity users = (UsersEntity)session.getAttribute("users");
+		if(users == null) {
+			return "redirect:/front";
+		}else {
+			List<BlogEntity>blogList = blogService.selectAll(users.getUsersId());
+			model.addAttribute("blogList", blogList);
+			model.addAttribute("usersName", users.getUsersName());
+			return "front.html";
+		}
+		
 	}
 	
 	//一覧画面
@@ -53,7 +62,7 @@ public class BlogController {
 	public String getBlogRegisterPage(Model model) {
 		UsersEntity users = (UsersEntity)session.getAttribute("users");
 		if(users == null) {
-			return "blog_register.html";
+			return "redirect:/login";
 		}else {
 			model.addAttribute("usersName", users.getUsersName());
 			return "blog_register.html";
@@ -65,15 +74,15 @@ public class BlogController {
 			@RequestParam MultipartFile blogImage,
 			@RequestParam String article,Model model) {
 		UsersEntity users = (UsersEntity)session.getAttribute("users");
-		Long usersId = users.getUsersId();
-		if(users == null) {
+//		Long usersId = users.getUsersId();
+		if(users == null){
 			return "redirect:/login";
 		}else {
 			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + blogImage.getOriginalFilename();
 			try {
-				Files.copy(blogImage.getInputStream(), Path.of(""+ fileName));
+				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + fileName));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 			if(blogService.createBlog(blogTitle, fileName, article, article)) {
@@ -87,18 +96,48 @@ public class BlogController {
 	//blog更新
 	@GetMapping("/blog/edit/{blogId}")
 	public String getBlogEditPage(@PathVariable long blogId, Model model) {
-		
-		return "blog_edit.html";
+		UsersEntity users = (UsersEntity)session.getAttribute("users");
+//		Long usersId = users.getUsersId();
+		if(users == null) {
+			return "redirect:/login";
+		}else {
+			BlogEntity blogList = blogService.getByBlogPost(blogId);
+			if(blogList == null) {
+				return "redirect:/list";
+			}else {
+				model.addAttribute("usersName",users.getUsersName());
+				model.addAttribute("blog", blogList);
+				return "blog_edit.html";
+			}
+			
+		}
 	}
 	
 	//更新処理
-//	@PostMapping("/blog/edit/process")
-//	public String getBlogEditProcess(@RequestParam Long blogId,
-//			@RequestParam String blogTitle,@RequestParam MultipartFile blogImage,
-//			@RequestParam String article,@RequestParam String usersId,
-//			@RequestParam String productDescription,Model model) {
-//		UsersEntity users = (UsersEntity)session.getAttribute("users");
-//	}
+	@PostMapping("/blog/edit/process")
+	public String getBlogEditProcess(@RequestParam Long blogId,
+			@RequestParam String blogTitle,@RequestParam MultipartFile blogImage,
+			@RequestParam String article,
+			Model model) {
+		UsersEntity users = (UsersEntity)session.getAttribute("users");
+
+		if(users == null) {
+			return "redirect:/login";
+		}else {
+			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + blogImage.getOriginalFilename();
+			try {
+				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + fileName));
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+			if(blogService.editBlog(blogId, blogTitle, fileName,article)) {
+				return "redirect:/list";
+			}else {
+				return "redirect:/blog/edit/" + blogId;
+			}
+		}
+	}
 	
 	//削除処理
 	@PostMapping("/blog/delete")
@@ -106,7 +145,7 @@ public class BlogController {
 		if(blogService.deleteBlog(blogId)){
 			return "redirect:/list";
 		}else {
-			return "";
+			return "redirect:/blog/edit";
 		}
 	}
 	
@@ -117,6 +156,10 @@ public class BlogController {
 	
 	@GetMapping("/naruto")
 	public String getNarutoPage(Model model) {
+//		UsersEntity users = (UsersEntity)session.getAttribute("users");
+//		Long usersId = users.getUsersId();
+//		BlogEntity blogList = blogService.getByBlogPost(blogId);
+//		model.addAttribute("blogList", blogList);
 		return "naruto.html";
 	}
 

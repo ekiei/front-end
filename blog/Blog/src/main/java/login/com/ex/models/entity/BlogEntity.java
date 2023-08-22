@@ -28,7 +28,7 @@ public class BlogEntity {
 	@NonNull
 	@Column(name="article")
 	private String article;
-	
+
 	@NonNull
 	@Column(name="users_id")
 	private String usersId;
@@ -42,7 +42,7 @@ public class BlogEntity {
 		this.blogTitle = blogTitle;
 		this.blogImage = blogImage;
 		this.article = article;
-		this.usersId = usersId;
+
 	}
 
 	public Long getBlogId() {
@@ -76,7 +76,7 @@ public class BlogEntity {
 	public void setArticle(String article) {
 		this.article = article;
 	}
-
+	
 	public String getUsersId() {
 		return usersId;
 	}
@@ -84,10 +84,4 @@ public class BlogEntity {
 	public void setUsersId(String usersId) {
 		this.usersId = usersId;
 	}
-	
-	
-
-	
-	
-	
 }

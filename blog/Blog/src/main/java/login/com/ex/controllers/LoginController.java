@@ -36,15 +36,17 @@ public class LoginController {
 			session.setAttribute("users", user);
 			model.addAttribute("username",username);
 			model.addAttribute("password",password);
-			return "front.html";
+			return "redirect:/front";
 		}else {
-			return "login.html";
+			return "redirect:/login";
 		}
 	}
 	
 	//ログアウト
 	@GetMapping("/logout")
 	public String getLogoutPage() {
-		return "login.html";
+		//セッションの無効化
+		session.invalidate();
+		return "redirect:/login";
 	}
 }
