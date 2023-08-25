@@ -154,13 +154,13 @@ public class BlogController {
 		return "profile.html";
 	}
 	
-	@GetMapping("/naruto")
-	public String getNarutoPage(Model model) {
+//	@GetMapping("/naruto")
+//	public String getNarutoPage(Model model) {
 //		UsersEntity users = (UsersEntity)session.getAttribute("users");
 //		Long usersId = users.getUsersId();
 //		BlogEntity blogList = blogService.getByBlogPost(blogId);
 //		model.addAttribute("blogList", blogList);
-		return "naruto.html";
-	}
+//		return "naruto.html";
+//	}
 
 }

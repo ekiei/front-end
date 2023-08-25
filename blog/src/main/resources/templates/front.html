@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Naruto</title>
+	<title>Mr.Zのブログ</title>
 	<link rel="stylesheet" th:href="@{/css/front.css}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -26,31 +26,35 @@
 		<h1 id="" style="text-align: center;">張のブログ</h1>
 
 		<div style="text-align: center;">
-			<img th:src="@{/image/Z.png}" alt="私">
-		</div>
-
-		<div id="menu" style="text-align: center;">
-			<button style="background-color: rgba(201, 236, 255, 0.372); width: 100px; height: 45px;" type="button"
-				onclick="location.href='/front'"><i class="fa-solid fa-house"></i>ホーム</button>
-			<button style="background-color: rgba(201, 236, 255, 0.372); width: 100px; height: 45px;" type="button"
-				onclick="location.href='/list'">記事一覧</button>
+			<a th:href="@{/profile}"><img th:src="@{/image/Z.png}" alt="私"></a>
 		</div>
 	</header>
 
 	<main>
-		<hr>
-		<h1 style="text-align: center;">鳴門の渦潮</h1>
-		<hr>
-		<p>初めて見た鳴門の渦潮は、思っていたのと違っていた。<br>
-			<img th:src="@{/image/1.jpeg}" alt="">
-		</p>
-		<p>台風の目のような、はっきりとした形の渦が、海面に浮かんでいるのをイメージしていたが、実際は、そこまではっきりしていない。<br>
-			渦の形や場所も一定でなく、常に変化している。
-		</p>
+		<form action="" method="post">
+			<div id="menu" style="text-align: center;">
+				<button style="background-color: rgba(201, 236, 255, 0.372); width: 100px; height: 45px;" type="button"
+					onclick="location.href='/front'"><i class="fa-solid fa-house"></i>ホーム</button>
+				<button style="background-color: rgba(201, 236, 255, 0.372); width: 100px; height: 45px;" type="button"
+					onclick="location.href='/list'">記事一覧</button>
+				<!--<input type="text" id="select" name="select" placeholder="キーワードを入力してください">-->
+				<!--<input type="submit" id="selectButton" value="検索">-->
+			</div>
+		</form>
 
-		<p>また、干潮満潮の影響もあり、日によって、見える状態が大きく変化するという。</p>
-		<p>船で渦潮に近づくと、渦潮の激しい動きが聞こえてくる。</p>
-		<p>船が進むことで聞こえる風切り音と波の音、そして渦潮の轟音が、自然の力強さとダイナミズムをより実感できる。</p>
+
+		<hr>
+		<h1 style="text-align: center;"> N E W S </h1>
+		<hr>
+
+		<div id="content">
+			<div th:each="blog:${blogList}">
+				<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
+					<img th:src="@{/blog-img/{items}(items=${blog.blogImage})}" alt="" width="300" height="200">
+					<h2 th:text="${blog.blogTitle}"></h2>
+				</a>
+			</div>
+		</div>
 	</main>
 
 	<footer>
@@ -65,7 +69,7 @@
 			<h2>ご覧いただきありがとうございました</h2>
 		</div>
 		<div id="footer" style="clear:both;text-align:center;">
-			版权 © yirui.com</div>
+			© &COPY;;yirui.com</div>
 	</footer>
 </body>
 
